@@ -1,0 +1,695 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>5.0</version>
+    <date>2020-06-19T17:29:03Z</date>
+    <groups>
+        <group>
+            <name>Templates</name>
+        </group>
+        <group>
+            <name>Templates/Network devices</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <template>Template SNMPv3 APC PDU</template>
+            <name>Template SNMPv3 APC PDU</name>
+            <templates>
+                <template>
+                    <name>Template Module Generic SNMPv3</name>
+                </template>
+            </templates>
+            <groups>
+                <group>
+                    <name>Templates</name>
+                </group>
+                <group>
+                    <name>Templates/Network devices</name>
+                </group>
+            </groups>
+            <applications>
+                <application>
+                    <name>Outlets</name>
+                </application>
+                <application>
+                    <name>Power</name>
+                </application>
+            </applications>
+            <items>
+                <item>
+                    <name>Bank 1 Avg Current Draw 7 days</name>
+                    <type>CALCULATED</type>
+                    <key>7dayavgBank1</key>
+                    <value_type>FLOAT</value_type>
+                    <units>A</units>
+                    <params>avg(PowerDrawBank1,7d)</params>
+                    <applications>
+                        <application>
+                            <name>Power</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>Bank 2 Avg Current Draw 7 days</name>
+                    <type>CALCULATED</type>
+                    <key>7dayavgBank2</key>
+                    <value_type>FLOAT</value_type>
+                    <units>A</units>
+                    <params>avg(PowerDrawBank2,7d)</params>
+                    <applications>
+                        <application>
+                            <name>Power</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>Bank 1 Max Current Draw 7 days</name>
+                    <type>CALCULATED</type>
+                    <key>7dayMaxBank1</key>
+                    <value_type>FLOAT</value_type>
+                    <units>A</units>
+                    <params>max(PowerDrawBank1,7d)</params>
+                    <applications>
+                        <application>
+                            <name>Power</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>Bank 2 Max Current Draw 7 days</name>
+                    <type>CALCULATED</type>
+                    <key>7dayMaxBank2</key>
+                    <value_type>FLOAT</value_type>
+                    <units>A</units>
+                    <params>max(PowerDrawBank2,7d)</params>
+                    <applications>
+                        <application>
+                            <name>Power</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>PDU AVG Total Current 7days</name>
+                    <type>CALCULATED</type>
+                    <key>PDUtotalAvg7days</key>
+                    <value_type>FLOAT</value_type>
+                    <units>A</units>
+                    <params>avg(rPDU2PhaseStatusCurrent.1,7d)</params>
+                    <applications>
+                        <application>
+                            <name>Power</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>PDU AVG Total Power 7 days</name>
+                    <type>CALCULATED</type>
+                    <key>PDUtotalAVGPwr7days</key>
+                    <value_type>FLOAT</value_type>
+                    <units>Kw</units>
+                    <params>avg(rPDU2DeviceStatusPower.1,7d)</params>
+                    <applications>
+                        <application>
+                            <name>Power</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>PDU Max Total Current 7days</name>
+                    <type>CALCULATED</type>
+                    <key>PDUtotalMax7days</key>
+                    <value_type>FLOAT</value_type>
+                    <units>A</units>
+                    <params>max(rPDU2PhaseStatusCurrent.1,7d)</params>
+                    <applications>
+                        <application>
+                            <name>Power</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>PDU Max Total Power 7 days</name>
+                    <type>CALCULATED</type>
+                    <key>PDUtotalMAXPwr7days</key>
+                    <value_type>FLOAT</value_type>
+                    <units>Kw</units>
+                    <params>max(rPDU2DeviceStatusPower.1,7d)</params>
+                    <applications>
+                        <application>
+                            <name>Power</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>Bank 1 Current Draw</name>
+                    <type>CALCULATED</type>
+                    <key>PowerDrawBank1</key>
+                    <value_type>FLOAT</value_type>
+                    <units>A</units>
+                    <params>last(rPDUOutletStatusLoad[1])+&#13;
+last(rPDUOutletStatusLoad[2])+&#13;
+last(rPDUOutletStatusLoad[3])+&#13;
+last(rPDUOutletStatusLoad[4])+&#13;
+last(rPDUOutletStatusLoad[5])+&#13;
+last(rPDUOutletStatusLoad[6])+&#13;
+last(rPDUOutletStatusLoad[7])+&#13;
+last(rPDUOutletStatusLoad[8])+&#13;
+last(rPDUOutletStatusLoad[9])+&#13;
+last(rPDUOutletStatusLoad[10])+&#13;
+last(rPDUOutletStatusLoad[11])+&#13;
+last(rPDUOutletStatusLoad[12])</params>
+                    <applications>
+                        <application>
+                            <name>Power</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>Bank 2 Current Draw</name>
+                    <type>CALCULATED</type>
+                    <key>PowerDrawBank2</key>
+                    <value_type>FLOAT</value_type>
+                    <units>A</units>
+                    <params>last(rPDUOutletStatusLoad[13])+&#13;
+last(rPDUOutletStatusLoad[14])+&#13;
+last(rPDUOutletStatusLoad[15])+&#13;
+last(rPDUOutletStatusLoad[16])+&#13;
+last(rPDUOutletStatusLoad[17])+&#13;
+last(rPDUOutletStatusLoad[18])+&#13;
+last(rPDUOutletStatusLoad[19])+&#13;
+last(rPDUOutletStatusLoad[20])+&#13;
+last(rPDUOutletStatusLoad[21])+&#13;
+last(rPDUOutletStatusLoad[22])+&#13;
+last(rPDUOutletStatusLoad[23])+&#13;
+last(rPDUOutletStatusLoad[24])</params>
+                    <applications>
+                        <application>
+                            <name>Power</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>rPDU2DevicePropertiesMaxPhaseCurrentRating.1</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>.1.3.6.1.4.1.318.1.1.26.4.2.1.12.1</snmp_oid>
+                    <key>rPDU2DevicePropertiesMaxPhaseCurrentRating.1</key>
+                    <delay>24h</delay>
+                    <units>A</units>
+                </item>
+                <item>
+                    <name>rPDU2DeviceStatusLoadState.1</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>.1.3.6.1.4.1.318.1.1.26.4.3.1.4.1</snmp_oid>
+                    <key>rPDU2DeviceStatusLoadState.1</key>
+                    <valuemap>
+                        <name>APC Status Load State</name>
+                    </valuemap>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}&lt;&gt;2</expression>
+                            <name>APC PDU Load State</name>
+                            <priority>HIGH</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>rPDU2DeviceStatusPeakPower.1</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>.1.3.6.1.4.1.318.1.1.26.4.3.1.6.1</snmp_oid>
+                    <key>rPDU2DeviceStatusPeakPower.1</key>
+                    <delay>5m</delay>
+                    <units>Kw</units>
+                    <preprocessing>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>0.01</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>rPDU2DeviceStatusPeakPowerTimestamp.1</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>.1.3.6.1.4.1.318.1.1.26.4.3.1.7.1</snmp_oid>
+                    <key>rPDU2DeviceStatusPeakPowerTimestamp.1</key>
+                    <delay>5m</delay>
+                    <trends>0</trends>
+                    <value_type>CHAR</value_type>
+                </item>
+                <item>
+                    <name>rPDU2DeviceStatusPower.1</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>.1.3.6.1.4.1.318.1.1.26.4.3.1.5.1</snmp_oid>
+                    <key>rPDU2DeviceStatusPower.1</key>
+                    <value_type>FLOAT</value_type>
+                    <units>Kw</units>
+                    <preprocessing>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>0.01</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>rPDU2DeviceStatusPowerSupplyAlarm.1</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>.1.3.6.1.4.1.318.1.1.26.4.3.1.12.1</snmp_oid>
+                    <key>rPDU2DeviceStatusPowerSupplyAlarm.1</key>
+                    <valuemap>
+                        <name>APC Device Status Alarm</name>
+                    </valuemap>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}&lt;&gt;1</expression>
+                            <name>APC PDU Power Alarm</name>
+                            <priority>HIGH</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>rPDU2GroupTotalEnergy.0</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>.1.3.6.1.4.1.318.1.1.26.11.3.0</snmp_oid>
+                    <key>rPDU2GroupTotalEnergy.0</key>
+                    <units>w</units>
+                    <preprocessing>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>0.1</params>
+                        </step>
+                    </preprocessing>
+                    <triggers>
+                        <trigger>
+                            <expression>{change()}&gt;400</expression>
+                            <name>APC PDU Load Change</name>
+                            <priority>INFO</priority>
+                        </trigger>
+                        <trigger>
+                            <expression>{nodata(5m)}&gt;0</expression>
+                            <name>SNMP poling failure</name>
+                            <priority>HIGH</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>rPDU2IdentFirmwareRev.1</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>.1.3.6.1.4.1.318.1.1.26.2.1.6.1</snmp_oid>
+                    <key>rPDU2IdentFirmwareRev.1</key>
+                    <delay>24h</delay>
+                    <trends>0</trends>
+                    <value_type>CHAR</value_type>
+                </item>
+                <item>
+                    <name>rPDU2IdentModelNumber.1</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>.1.3.6.1.4.1.318.1.1.26.2.1.8.1</snmp_oid>
+                    <key>rPDU2IdentModelNumber.1</key>
+                    <delay>24h</delay>
+                    <trends>0</trends>
+                    <value_type>CHAR</value_type>
+                    <inventory_link>MODEL</inventory_link>
+                </item>
+                <item>
+                    <name>rPDU2IdentSerialNumber.1</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>.1.3.6.1.4.1.318.1.1.26.2.1.9.1</snmp_oid>
+                    <key>rPDU2IdentSerialNumber.1</key>
+                    <delay>24h</delay>
+                    <trends>0</trends>
+                    <value_type>CHAR</value_type>
+                </item>
+                <item>
+                    <name>PDU Total Current Draw</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>.1.3.6.1.4.1.318.1.1.26.6.3.1.5.1</snmp_oid>
+                    <key>rPDU2PhaseStatusCurrent.1</key>
+                    <units>A</units>
+                    <applications>
+                        <application>
+                            <name>Power</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>0.1</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>rPDU2PhaseStatusPeakCurrent.1</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>.1.3.6.1.4.1.318.1.1.26.6.3.1.10.1</snmp_oid>
+                    <key>rPDU2PhaseStatusPeakCurrent.1</key>
+                    <units>A</units>
+                    <preprocessing>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>0.1</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>rPDU2PhaseStatusPeakCurrentTimestamp.1</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>.1.3.6.1.4.1.318.1.1.26.6.3.1.11.1</snmp_oid>
+                    <key>rPDU2PhaseStatusPeakCurrentTimestamp.1</key>
+                    <delay>5m</delay>
+                    <trends>0</trends>
+                    <value_type>CHAR</value_type>
+                </item>
+                <item>
+                    <name>rPDU2PhaseStatusVoltage.1</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>.1.3.6.1.4.1.318.1.1.26.6.3.1.6.1</snmp_oid>
+                    <key>rPDU2PhaseStatusVoltage.1</key>
+                    <delay>30s</delay>
+                    <units>V</units>
+                </item>
+                <item>
+                    <name>rPDUIdentDevicePowerFactor</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>.1.3.6.1.4.1.318.1.1.12.1.17.0</snmp_oid>
+                    <key>rPDUIdentDevicePowerFactor</key>
+                    <value_type>FLOAT</value_type>
+                    <preprocessing>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>0.001</params>
+                        </step>
+                    </preprocessing>
+                </item>
+            </items>
+            <discovery_rules>
+                <discovery_rule>
+                    <name>Outlets</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>discovery[{#SNMPVALUE},.1.3.6.1.4.1.318.1.1.26.9.2.1.1.1]</snmp_oid>
+                    <key>rPDU2Outlet</key>
+                    <delay>3600</delay>
+                    <item_prototypes>
+                        <item_prototype>
+                            <name>Outlet $1 Name</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>.1.3.6.1.4.1.318.1.1.26.9.2.1.1.3.{#SNMPINDEX}</snmp_oid>
+                            <key>rPDU2OutletSwitchedConfigName[{#SNMPINDEX}]</key>
+                            <delay>3600</delay>
+                            <trends>0</trends>
+                            <value_type>CHAR</value_type>
+                            <applications>
+                                <application>
+                                    <name>Outlets</name>
+                                </application>
+                            </applications>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Outlet $1 Bank</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>.1.3.6.1.4.1.318.1.1.26.9.2.2.1.6.{#SNMPINDEX}</snmp_oid>
+                            <key>rPDU2OutletSwitchedPropertiesBank[{#SNMPINDEX}]</key>
+                            <delay>86400</delay>
+                            <applications>
+                                <application>
+                                    <name>Outlets</name>
+                                </application>
+                            </applications>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Outlet $1 State</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>.1.3.6.1.4.1.318.1.1.26.9.2.3.1.5.{#SNMPINDEX}</snmp_oid>
+                            <key>rPDU2OutletSwitchedStatusState[{#SNMPINDEX}]</key>
+                            <delay>60</delay>
+                            <applications>
+                                <application>
+                                    <name>Outlets</name>
+                                </application>
+                            </applications>
+                            <valuemap>
+                                <name>APC Outlet State</name>
+                            </valuemap>
+                            <trigger_prototypes>
+                                <trigger_prototype>
+                                    <expression>{diff()}=1</expression>
+                                    <name>Outlet {#SNMPVALUE} State Change</name>
+                                    <priority>INFO</priority>
+                                </trigger_prototype>
+                            </trigger_prototypes>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Outlet $1 Max Load</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>.1.3.6.1.4.1.318.1.1.12.2.1.8.1.3.{#SNMPINDEX}</snmp_oid>
+                            <key>rPDULoadDevMaxOutletLoad[{#SNMPINDEX}]</key>
+                            <delay>1h</delay>
+                            <units>A</units>
+                            <applications>
+                                <application>
+                                    <name>Outlets</name>
+                                </application>
+                            </applications>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Outlet $1 Load</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>.1.3.6.1.4.1.318.1.1.12.3.5.1.1.7.{#SNMPINDEX}</snmp_oid>
+                            <key>rPDUOutletStatusLoad[{#SNMPINDEX}]</key>
+                            <delay>30s</delay>
+                            <value_type>FLOAT</value_type>
+                            <units>A</units>
+                            <applications>
+                                <application>
+                                    <name>Outlets</name>
+                                </application>
+                            </applications>
+                            <preprocessing>
+                                <step>
+                                    <type>MULTIPLIER</type>
+                                    <params>0.1</params>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                    </item_prototypes>
+                </discovery_rule>
+            </discovery_rules>
+            <macros>
+                <macro>
+                    <macro>{$AUTH_PASSPHRASE}</macro>
+                </macro>
+                <macro>
+                    <macro>{$AUTH_PRIVACY}</macro>
+                </macro>
+                <macro>
+                    <macro>{$SECNAME}</macro>
+                    <value>public</value>
+                </macro>
+            </macros>
+        </template>
+    </templates>
+    <graphs>
+        <graph>
+            <name>APC Current Usage</name>
+            <graph_items>
+                <graph_item>
+                    <color>1A7C11</color>
+                    <item>
+                        <host>Template SNMPv3 APC PDU</host>
+                        <key>rPDU2GroupTotalEnergy.0</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+        <graph>
+            <name>APC Phase Power Status</name>
+            <graph_items>
+                <graph_item>
+                    <drawtype>GRADIENT_LINE</drawtype>
+                    <color>00BB00</color>
+                    <item>
+                        <host>Template SNMPv3 APC PDU</host>
+                        <key>rPDU2PhaseStatusCurrent.1</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <drawtype>DASHED_LINE</drawtype>
+                    <color>DD0000</color>
+                    <item>
+                        <host>Template SNMPv3 APC PDU</host>
+                        <key>rPDU2DevicePropertiesMaxPhaseCurrentRating.1</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>2</sortorder>
+                    <drawtype>DASHED_LINE</drawtype>
+                    <color>EEEE00</color>
+                    <item>
+                        <host>Template SNMPv3 APC PDU</host>
+                        <key>rPDU2PhaseStatusPeakCurrent.1</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+        <graph>
+            <name>Bank Power usage</name>
+            <graph_items>
+                <graph_item>
+                    <color>F63100</color>
+                    <calc_fnc>ALL</calc_fnc>
+                    <item>
+                        <host>Template SNMPv3 APC PDU</host>
+                        <key>PowerDrawBank1</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <color>FC6EA3</color>
+                    <calc_fnc>ALL</calc_fnc>
+                    <item>
+                        <host>Template SNMPv3 APC PDU</host>
+                        <key>PowerDrawBank2</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>2</sortorder>
+                    <color>AC8C14</color>
+                    <calc_fnc>ALL</calc_fnc>
+                    <item>
+                        <host>Template SNMPv3 APC PDU</host>
+                        <key>rPDU2PhaseStatusCurrent.1</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>3</sortorder>
+                    <color>89ABF8</color>
+                    <calc_fnc>ALL</calc_fnc>
+                    <item>
+                        <host>Template SNMPv3 APC PDU</host>
+                        <key>rPDU2DeviceStatusPower.1</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>4</sortorder>
+                    <color>1A7C11</color>
+                    <calc_fnc>ALL</calc_fnc>
+                    <item>
+                        <host>Template SNMPv3 APC PDU</host>
+                        <key>7dayavgBank1</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>5</sortorder>
+                    <color>2774A4</color>
+                    <calc_fnc>ALL</calc_fnc>
+                    <item>
+                        <host>Template SNMPv3 APC PDU</host>
+                        <key>7dayMaxBank1</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>6</sortorder>
+                    <color>A54F10</color>
+                    <calc_fnc>ALL</calc_fnc>
+                    <item>
+                        <host>Template SNMPv3 APC PDU</host>
+                        <key>7dayavgBank2</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>7</sortorder>
+                    <color>6C59DC</color>
+                    <calc_fnc>ALL</calc_fnc>
+                    <item>
+                        <host>Template SNMPv3 APC PDU</host>
+                        <key>7dayMaxBank2</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>8</sortorder>
+                    <color>611F27</color>
+                    <calc_fnc>ALL</calc_fnc>
+                    <item>
+                        <host>Template SNMPv3 APC PDU</host>
+                        <key>PDUtotalMax7days</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>9</sortorder>
+                    <color>F230E0</color>
+                    <calc_fnc>ALL</calc_fnc>
+                    <item>
+                        <host>Template SNMPv3 APC PDU</host>
+                        <key>PDUtotalAvg7days</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>10</sortorder>
+                    <color>5CCD18</color>
+                    <calc_fnc>ALL</calc_fnc>
+                    <item>
+                        <host>Template SNMPv3 APC PDU</host>
+                        <key>PDUtotalAVGPwr7days</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>11</sortorder>
+                    <color>BB2A02</color>
+                    <calc_fnc>ALL</calc_fnc>
+                    <item>
+                        <host>Template SNMPv3 APC PDU</host>
+                        <key>PDUtotalMAXPwr7days</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+    </graphs>
+    <value_maps>
+        <value_map>
+            <name>APC Device Status Alarm</name>
+            <mappings>
+                <mapping>
+                    <value>1</value>
+                    <newvalue>normal</newvalue>
+                </mapping>
+                <mapping>
+                    <value>2</value>
+                    <newvalue>alarm</newvalue>
+                </mapping>
+            </mappings>
+        </value_map>
+        <value_map>
+            <name>APC Outlet State</name>
+            <mappings>
+                <mapping>
+                    <value>1</value>
+                    <newvalue>off</newvalue>
+                </mapping>
+                <mapping>
+                    <value>2</value>
+                    <newvalue>on</newvalue>
+                </mapping>
+            </mappings>
+        </value_map>
+        <value_map>
+            <name>APC Status Load State</name>
+            <mappings>
+                <mapping>
+                    <value>1</value>
+                    <newvalue>lowLoad</newvalue>
+                </mapping>
+                <mapping>
+                    <value>2</value>
+                    <newvalue>normal</newvalue>
+                </mapping>
+                <mapping>
+                    <value>3</value>
+                    <newvalue>nearOverload</newvalue>
+                </mapping>
+                <mapping>
+                    <value>4</value>
+                    <newvalue>overload</newvalue>
+                </mapping>
+            </mappings>
+        </value_map>
+    </value_maps>
+</zabbix_export>
